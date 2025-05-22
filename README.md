@@ -1,54 +1,17 @@
-# React + TypeScript + Vite
+# Ecommerce Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Requisitos Implementados
 
-Currently, two official plugins are available:
+- Imagens do produto: Uma imagem principal que ocupe cerca de 35% da tela, e abaixo dela, miniaturas de outras imagens do mesmo produto. É necessário que ao clicar nas miniaturas, a imagem principal seja alterada.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Título e preço do produto
 
-## Expanding the ESLint configuration
+- Seletores de variantes de Produto: Tamanho e Cor. Esses campos precisam ser gerados de maneira dinâmica, não gere campos sem que sigam um array ou objeto dinâmico.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Campo de disponibilidade de Entrega: Crie um campo que formata e verifica do frete digitado, caso o CEP exista, exiba o endereço completo. Consulte o CEP utilizando o `https://viacep.com.br/`
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- Todas as ações feitas pelo usuário, precisam ser salvas e mantidas caso a página seja atualizada, por 15 minutos.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Observações
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+As ações realizadas pelo usuário, como alteração de cor, tamanho do produto e modificação do CEP, são gerenciadas pela URL por meio de parâmetros de query. Isso garante que, quando o usuário recarregar a página, os filtros selecionados se mantenham, além de possibilitar o compartilhamento de um produto com uma configuração específica, uma funcionalidade comum em E-commerces
