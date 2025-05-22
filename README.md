@@ -15,3 +15,7 @@
 ### Observações
 
 As ações realizadas pelo usuário, como alteração de cor, tamanho do produto e modificação do CEP, são gerenciadas pela URL por meio de parâmetros de query. Isso garante que, quando o usuário recarregar a página, os filtros selecionados se mantenham, além de possibilitar o compartilhamento de um produto com uma configuração específica, uma funcionalidade comum em E-commerces
+
+## Link do projeto com Deploy na Vercel
+
+[https://ecommerce-page-seven-green.vercel.app/](https://ecommerce-page-seven-green.vercel.app/)
